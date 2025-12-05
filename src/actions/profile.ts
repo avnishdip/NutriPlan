@@ -86,13 +86,13 @@ export async function completeOnboarding(
       const dailyCalories = calculateCalorieTarget(
         tdee,
         onboardingData.primary_goal,
-        onboardingData.weekly_goal_kg
+        onboardingData.weekly_goal_kg ?? 0
       )
       
       const macros = calculateMacros(
         dailyCalories,
         onboardingData.primary_goal,
-        onboardingData.current_weight_kg
+        onboardingData.current_weight_kg!
       )
 
       calculatedTargets = {
