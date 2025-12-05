@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NutriPlan - AI-Powered Meal Planning Application
+
+A personalized meal planning and nutrition tracking web application built as part of CSI 4900 Honours Project at the University of Ottawa.
+
+## Overview
+
+NutriPlan helps users achieve their health and fitness goals through AI-generated personalized meal plans. The application considers user preferences, dietary restrictions, allergies, and fitness goals to create customized nutrition plans.
+
+## Features
+
+- **User Authentication**: Secure signup/login with Supabase Auth
+- **Personalized Onboarding**: Multi-step survey to collect user preferences
+- **AI Meal Plan Generation**: GPT-4 powered meal plan creation based on user profile
+- **Recipe Management**: Detailed recipes with nutritional information
+- **Smart Shopping Lists**: Auto-generated grocery lists with exact quantities
+- **Food Logging**: Track daily meals with photo upload support
+- **Progress Tracking**: Weight tracking with visual charts
+- **Responsive Design**: Mobile-friendly interface
+
+## Tech Stack
+
+- **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS
+- **UI Components**: shadcn/ui (Radix Primitives), Lucide React icons
+- **Backend/Database**: Supabase (PostgreSQL, Auth, Storage)
+- **AI Integration**: OpenAI API (GPT-4)
+- **Charts**: Recharts
+
+## Project Structure
+
+```
+nutriplan/
+├── src/
+│   ├── app/                    # Next.js App Router pages
+│   │   ├── (auth)/            # Authentication pages
+│   │   ├── (protected)/       # Protected routes (dashboard, etc.)
+│   │   └── onboarding/        # User onboarding flow
+│   ├── actions/               # Server actions for data mutations
+│   ├── components/            # Reusable UI components
+│   ├── lib/                   # Utility functions and configurations
+│   └── types/                 # TypeScript type definitions
+├── public/                    # Static assets
+└── DATABASE_SCHEMA.sql        # Database schema for Supabase
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+
+- npm or yarn
+- Supabase account
+- OpenAI API key
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/nutriplan.git
+cd nutriplan
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Add your credentials to `.env.local`:
+```
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+OPENAI_API_KEY=your_openai_api_key
+```
 
-## Learn More
+5. Set up the database:
+   - Go to Supabase SQL Editor
+   - Run the contents of `DATABASE_SCHEMA.sql`
 
-To learn more about Next.js, take a look at the following resources:
+6. Run the development server:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+7. Open [http://localhost:3000](http://localhost:3000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Database Schema
 
-## Deploy on Vercel
+The application uses the following main tables:
+- `profiles` - User profile and preferences
+- `meal_plans` - Generated meal plans
+- `recipes` - Individual recipes
+- `meal_plan_items` - Links recipes to meal plans
+- `shopping_lists` - Generated shopping lists
+- `food_logs` - User food journal entries
+- `weight_logs` - Weight tracking data
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## API Integration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### OpenAI
+The application uses GPT-4 to generate personalized meal plans based on:
+- User's caloric and macro targets
+- Dietary restrictions and allergies
+- Cuisine preferences
+- Cooking skill level
+
+## Author
+
+CSI 4900 Honours Project - University of Ottawa
+
+## License
+
+This project is for educational purposes as part of the CSI 4900 course.
