@@ -107,7 +107,7 @@ export default async function MealPlanDetailPage({ params }: Props) {
           {dates.map((date, index) => {
             const dayItems = itemsByDate[date]
             const dayNumber = index + 1
-            const totalCalories = dayItems?.reduce((sum, item) => sum + (item.calories || 0), 0) || 0
+            const totalCalories = dayItems?.reduce((sum: number, item) => sum + (item.calories || 0), 0) || 0
             const isToday = date === new Date().toISOString().split('T')[0]
             const completedCount = dayItems?.filter(i => i.is_completed).length || 0
 
