@@ -54,7 +54,7 @@ export default async function ShoppingListPage() {
 
   const categories = Object.keys(itemsByCategory).sort()
   const totalItems = items?.length || 0
-  const purchasedItems = items?.filter(i => i.is_purchased).length || 0
+  const purchasedItems = items?.filter((i: { is_purchased?: boolean }) => i.is_purchased).length || 0
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-6">

@@ -63,8 +63,8 @@ export async function TodaysMeals() {
     .eq('plan_date', today)
     .order('meal_type', { ascending: true })
 
-  const completedCount = todayItems?.filter(i => i.is_completed).length || 0
-  const totalCalories = todayItems?.reduce((sum: number, item) => sum + (item.calories || 0), 0) || 0
+  const completedCount = todayItems?.filter((i: { is_completed?: boolean }) => i.is_completed).length || 0
+  const totalCalories = todayItems?.reduce((sum: number, item: { calories?: number }) => sum + (item.calories || 0), 0) || 0
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 p-6 mb-8">
