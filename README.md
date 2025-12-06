@@ -107,10 +107,4 @@ The application uses GPT-4 to generate personalized meal plans based on:
 - Cuisine preferences
 - Cooking skill level
 
-## Author
 
-CSI 4900 Honours Project - University of Ottawa
-
-## License
-
-This project is for educational purposes as part of the CSI 4900 course.
