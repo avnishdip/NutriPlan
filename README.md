@@ -101,7 +101,7 @@ The application uses the following main tables:
 ## API Integration
 
 ### OpenAI
-The application uses GPT-4 to generate personalized meal plans based on:
+The application uses GPT-5 to generate personalized meal plans based on:
 - User's caloric and macro targets
 - Dietary restrictions and allergies
 - Cuisine preferences
