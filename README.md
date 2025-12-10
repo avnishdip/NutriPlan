@@ -10,7 +10,7 @@ NutriPlan helps users achieve their health and fitness goals through AI-generate
 
 - **User Authentication**: Secure signup/login with Supabase Auth
 - **Personalized Onboarding**: Multi-step survey to collect user preferences
-- **AI Meal Plan Generation**: GPT-4 powered meal plan creation based on user profile
+- **AI Meal Plan Generation**: GPT-5 powered meal plan creation based on user profile
 - **Recipe Management**: Detailed recipes with nutritional information
 - **Smart Shopping Lists**: Auto-generated grocery lists with exact quantities
 - **Food Logging**: Track daily meals with photo upload support
