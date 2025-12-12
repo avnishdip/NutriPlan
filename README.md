@@ -22,7 +22,7 @@ NutriPlan helps users achieve their health and fitness goals through AI-generate
 - **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS
 - **UI Components**: shadcn/ui (Radix Primitives), Lucide React icons
 - **Backend/Database**: Supabase (PostgreSQL, Auth, Storage)
-- **AI Integration**: OpenAI API (GPT-4)
+- **AI Integration**: OpenAI API (GPT-5)
 - **Charts**: Recharts
 
 ## Project Structure
